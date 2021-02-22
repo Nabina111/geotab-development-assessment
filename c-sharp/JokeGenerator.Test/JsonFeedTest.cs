@@ -40,5 +40,19 @@ namespace JokeGenerator.Test
             Assert.NotNull(result2);
 
         }
+
+        [Test]
+        public void GetRandomJokesTest_withWrongValuesTest()
+        {
+            var result1 = JsonFeed.GetRandomJokes("", "", "");
+
+            var result2 = JsonFeed.GetRandomJokes(null, null, "");
+
+
+            Assert.AreEqual(result1[0], "Input string not in correct format");
+            Assert.AreEqual(result1[0], "Input string not in correct format");
+
+            Assert.NotNull(result2);
+        }
     }
 }
