@@ -23,37 +23,45 @@ namespace ConsoleApp1
             {
                 while (true)
                 {
-                    printer.Value("Press c to get categories").ToString();
-                    printer.Value("Press r to get random jokes").ToString();
-                    key = Convert.ToChar(Console.ReadLine());
-                    if (key == 'c')
+                    try
                     {
-                        results = uiService.getCategories();
-                        PrintResults(results, printer);
-                    }
-                    if (key == 'r')
-                    {
-                        printer.Value("Want to use a random name? y/n").ToString();
-                        key= Convert.ToChar(Console.ReadLine());
-                        if (key == 'y')
-                            names = uiService.GetNames();
-                        printer.Value("Want to specify a category? y/n").ToString();
+                        printer.Value("Press c to get categories").ToString();
+                        printer.Value("Press r to get random jokes").ToString();
                         key = Convert.ToChar(Console.ReadLine());
-                        if (key == 'y')
+                        if (key == 'c')
                         {
-                            printer.Value("How many jokes do you want? (1-9)").ToString();
-                            int n = Int32.Parse(Console.ReadLine());
-                            printer.Value("Enter a category;").ToString();
-                            results = uiService.GetRandomJokes(Console.ReadLine(), n, names);
+                            results = uiService.getCategories();
                             PrintResults(results, printer);
                         }
-                        else
+                        if (key == 'r')
                         {
-                            printer.Value("How many jokes do you want? (1-9)").ToString();
-                            int n = Int32.Parse(Console.ReadLine());
-                            results = uiService.GetRandomJokes(null, n, names);
-                            PrintResults(results, printer);
+                            printer.Value("Want to use a random name? y/n").ToString();
+                            key = Convert.ToChar(Console.ReadLine());
+                            if (key == 'y')
+                                names = uiService.GetNames();
+                            printer.Value("Want to specify a category? y/n").ToString();
+                            key = Convert.ToChar(Console.ReadLine());
+                            if (key == 'y')
+                            {
+                                printer.Value("How many jokes do you want? (1-9)").ToString();
+                                int n = Int32.Parse(Console.ReadLine());
+                                printer.Value("Enter a category;").ToString();
+                                results = uiService.GetRandomJokes(Console.ReadLine(), n, names);
+                                PrintResults(results, printer);
+                            }
+                            else
+                            {
+                                printer.Value("How many jokes do you want? (1-9)").ToString();
+                                int n = Int32.Parse(Console.ReadLine());
+                                results = uiService.GetRandomJokes(null, n, names);
+                                PrintResults(results, printer);
+                            }
                         }
+                    }
+                    catch (Exception Ex)
+                    {
+                        PrintResults(new string[] { "Error in input Value. Please enter the correct values for input!" }, printer);
+                        continue;
                     }
                 }
             }

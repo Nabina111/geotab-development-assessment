@@ -16,7 +16,7 @@ namespace JokeGenerstor.DAL
             }
             catch (Exception Ex)
             {
-                throw Ex;
+                return new string[] { "Error in connection" };
 
             }
 
@@ -30,7 +30,7 @@ namespace JokeGenerstor.DAL
             }
             catch(Exception Ex)
             {
-                throw Ex;
+                return new string[] { "Error in connection" };
             }
         }
 
@@ -44,7 +44,7 @@ namespace JokeGenerstor.DAL
             }
             catch(Exception Ex)
             {
-                throw Ex;
+                return Tuple.Create("Error in Connection", " Please Try again Later");
             }
         }
     }

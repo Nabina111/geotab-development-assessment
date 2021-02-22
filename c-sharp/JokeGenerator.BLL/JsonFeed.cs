@@ -44,7 +44,7 @@ namespace JokeGenerstor.DAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                return new string[] {"Input string not in correct format" };
             }
         }
 
@@ -65,7 +65,7 @@ namespace JokeGenerstor.DAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                return new string[] { "Error in connection" };
             }
         }
         public static string[] GetCategories()
@@ -79,7 +79,7 @@ namespace JokeGenerstor.DAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                return new string[] { "Error in connection" };
             }
         }
 

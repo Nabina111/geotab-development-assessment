@@ -3,11 +3,16 @@
 
 ### Task 1 - Fix some ugly code ###
 
-Imagine yourself working at Joke Company™. This company has an app that gets random Chuck Norris jokes and can substitute other peoples names into the joke instead of Chuck Norris'.
+--Added Separation of concern for well mangaged code
+--Added interface for reusasibility
+--Added Dependency Injection and added microsoft.csharp runtime binder
+--Removed static Variables and changed it to local
+--Fixed bugs in code (Wrong URL, UI issue)
+--Added Unit Test cases
+--Added Try Catch Block
+--Upgraded the project vesion so that it will be more cross platform.
 
-Your task as a professional developer is to clean up this app and make it something you can be proud of.
 
-*Note: This is NOT a representation of our codebase to be clear. We did have fun crafting this beauty however ;)*
 
 ### Task 2 - Write a report ###
 
