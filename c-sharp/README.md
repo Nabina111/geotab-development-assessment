@@ -9,7 +9,7 @@
 --Removed static Variables and changed it to local
 --Fixed bugs in code (Wrong URL, UI issue)
 --Added Unit Test cases
---Added Try Catch Block
+--Added Try Catch Block and handled errors
 --Upgraded the project vesion so that it will be more cross platform.
 
 
