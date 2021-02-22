@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JokeGenerator.DAL\JokeGenerator.BLL.csproj" />
+    <ProjectReference Include="..\JokeGenerator.BLL\JokeGenerator.BLL.csproj" />
   </ItemGroup>
 
 </Project>

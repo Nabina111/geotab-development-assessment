@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokeGenerator", "ConsoleApp1\JokeGenerator.csproj", "{F31733F5-8322-4DDC-86C9-658FFDC656F8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokeGenerator.BLL", "JokeGenerator.DAL\JokeGenerator.BLL.csproj", "{930F1AE5-1C13-4F70-8A4F-4B275002FB90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokeGenerator.Test", "JokeGenerator.Test\JokeGenerator.Test.csproj", "{3186D1CE-2613-43FC-91EC-B9F446F46378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokeGenerator.Test", "JokeGenerator.Test\JokeGenerator.Test.csproj", "{3186D1CE-2613-43FC-91EC-B9F446F46378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokeGenerator.BLL", "JokeGenerator.BLL\JokeGenerator.BLL.csproj", "{5DC8509A-49DD-441B-AB51-7C1AC348EE5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{F31733F5-8322-4DDC-86C9-658FFDC656F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31733F5-8322-4DDC-86C9-658FFDC656F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31733F5-8322-4DDC-86C9-658FFDC656F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{930F1AE5-1C13-4F70-8A4F-4B275002FB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{930F1AE5-1C13-4F70-8A4F-4B275002FB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{930F1AE5-1C13-4F70-8A4F-4B275002FB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{930F1AE5-1C13-4F70-8A4F-4B275002FB90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3186D1CE-2613-43FC-91EC-B9F446F46378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3186D1CE-2613-43FC-91EC-B9F446F46378}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3186D1CE-2613-43FC-91EC-B9F446F46378}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3186D1CE-2613-43FC-91EC-B9F446F46378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC8509A-49DD-441B-AB51-7C1AC348EE5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC8509A-49DD-441B-AB51-7C1AC348EE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC8509A-49DD-441B-AB51-7C1AC348EE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC8509A-49DD-441B-AB51-7C1AC348EE5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

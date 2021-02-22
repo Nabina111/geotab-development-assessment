@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 
@@ -34,7 +32,7 @@ namespace JokeGenerstor.DAL
 
                 string joke = Task.FromResult(client.GetStringAsync(url).Result).Result;
 
-                if (string.IsNullOrEmpty(firstname) && string.IsNullOrEmpty(lastname))
+                if (!(string.IsNullOrEmpty(firstname) && string.IsNullOrEmpty(lastname)))
                 {
                     int index = joke.IndexOf("Chuck Norris");
                     string firstPart = joke.Substring(0, index);

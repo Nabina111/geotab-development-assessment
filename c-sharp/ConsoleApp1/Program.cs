@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using JokeGenerstor.DAL;
-using Newtonsoft.Json;
 
 namespace ConsoleApp1
 {
@@ -17,63 +11,56 @@ namespace ConsoleApp1
         {
             uiService = new GetUIItems();
         }
-       
+
 
         static void Main(string[] args)
         {
-            try
+            Tuple<string, string> names = null;
+            string[] results = new string[50];
+            ConsolePrinter printer = new ConsolePrinter();
+            printer.Value("Press ? to get instructions.").ToString();
+            if (Console.ReadLine() == "?")
             {
-                Tuple<string, string> names = null;
-                string[] results = new string[50];
-                ConsolePrinter printer = new ConsolePrinter();
-                printer.Value("Press ? to get instructions.").ToString();
-                if (Console.ReadLine() == "?")
+                while (true)
                 {
-                    while (true)
+                    printer.Value("Press c to get categories").ToString();
+                    printer.Value("Press r to get random jokes").ToString();
+                    key = Convert.ToChar(Console.ReadLine());
+                    if (key == 'c')
                     {
-                        printer.Value("Press c to get categories").ToString();
-                        printer.Value("Press r to get random jokes").ToString();
-                        GetEnteredKey(Console.ReadKey());
-                        if (key == 'c')
+                        results = uiService.getCategories();
+                        PrintResults(results, printer);
+                    }
+                    if (key == 'r')
+                    {
+                        printer.Value("Want to use a random name? y/n").ToString();
+                        key= Convert.ToChar(Console.ReadLine());
+                        if (key == 'y')
+                            names = uiService.GetNames();
+                        printer.Value("Want to specify a category? y/n").ToString();
+                        key = Convert.ToChar(Console.ReadLine());
+                        if (key == 'y')
                         {
-                            results = uiService.getCategories();
+                            printer.Value("How many jokes do you want? (1-9)").ToString();
+                            int n = Int32.Parse(Console.ReadLine());
+                            printer.Value("Enter a category;").ToString();
+                            results = uiService.GetRandomJokes(Console.ReadLine(), n, names);
                             PrintResults(results, printer);
                         }
-                        if (key == 'r')
+                        else
                         {
-                            printer.Value("Want to use a random name? y/n").ToString();
-                            GetEnteredKey(Console.ReadKey());
-                            if (key == 'y')
-                                names = uiService.GetNames();
-                            printer.Value("Want to specify a category? y/n").ToString();
-                            GetEnteredKey(Console.ReadKey());
-                            if (key == 'y')
-                            {
-                                printer.Value("How many jokes do you want? (1-9)").ToString();
-                                int n = Int32.Parse(Console.ReadLine());
-                                printer.Value("Enter a category;").ToString();
-                                results = uiService.GetRandomJokes(Console.ReadLine(), n, names);
-                                PrintResults(results, printer);
-                            }
-                            else
-                            {
-                                printer.Value("How many jokes do you want? (1-9)").ToString();
-                                int n = Int32.Parse(Console.ReadLine());
-                                results = uiService.GetRandomJokes(null, n, names);
-                                PrintResults(results, printer);
-                            }
+                            printer.Value("How many jokes do you want? (1-9)").ToString();
+                            int n = Int32.Parse(Console.ReadLine());
+                            results = uiService.GetRandomJokes(null, n, names);
+                            PrintResults(results, printer);
                         }
                     }
                 }
             }
-            catch(Exception Ex)
-            {
-                throw Ex;
-            }
 
         }
 
-        private static void PrintResults (string[] results, ConsolePrinter printer)
+        private static void PrintResults(string[] results, ConsolePrinter printer)
         {
             printer.Value("[" + string.Join(",", results) + "]").ToString();
         }
@@ -121,6 +108,6 @@ namespace ConsoleApp1
                     break;
             }
         }
-    
+
     }
 }
